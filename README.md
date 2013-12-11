@@ -4,31 +4,39 @@ MatPy
 For those who want their scientific computing terse like MATLAB, but done in Python.
 
 ## Motivation
-Python is wonderfully general and capable. But when you want to do scientific computing, it's not always clear the best import order to have at the beginning of your model (or where the statistics and probability distribution functions should be coming from.) On top of that, things can look really ugly and quote verbose if you have lots of "np." and "scipy.stats." preceding everything.
+Python is wonderfully general and capable. But when you want to do scientific computing, it's not always clear the best import order to have at the beginning of your model. Maybe your preamble is forgetting stuff.  
 
-On the other hand, coding in MATLAB is wonderfully terse when you need to get stuff done quickly. You don't have to worry about importing different modules, importing everything and risking namespace conflicts, etc. 
+Plus, sometimes you just want to do stuff quickly (like simulate white noise and plot) without overhead.  You just want to ignore the proper object-oriented way for now, and you don't want to think "To generate a random normal, do I do that from numpy, numpy.random? Or scipy.stats? Or scipy.randn? Or [head smashes into keyboard]"
+
+Finally, maybe you don't want your code to look really ugly and verbose with lots of "np.random", "scipy.stats", "linalg." etc. preceding every operation.
+
+On the other hand, coding in MATLAB is wonderfully terse when you need to get stuff done quickly. You don't have to worry about importing different modules, importing everything and thereby risking namespace conflicts, twenty different ways to do one thing, etc. It's very low cognitive load for simple stuff. 
+
+This repo hopes to bring that over to Python, allowing for quick MATLAB-like computing for those times when you don't need the full Python object-oriented arsenal.
 
 ## What This Module Does
 
-So this repo is a python module which gets the import order correct and puts everything under one module. Plus, it uses Matlab names for like "randn" for generating random normal variables. That way, you don't have to worry about the import statements. Plus, it's written so that if you just want to import the whole shebang with "from matpy import \*", you can do it and not worry about namespace conflicts.
+So this repo is a python module which imports useful and commonly-used portions of Python's scientific libraries and binds them to function names that are more MATLAB-like (like a simple "randn" for generating random normal variables). 
+
+Plus, it puts everything under one module.  That way, you don't have to worry about messy import statements at the beginning. And if you just want to import the whole shebang with "from matpy import \*", go for it. This is written so you can do that and not worry about namespace conflicts.
 
 ## Examples
 
 Here's a taste of how it works. First the super-quick version
 
     >>> from matpy import *
-    >>>
+
     >>> randn(5)
     array([-0.42073853,  1.90156021, -0.78803865,  0.78138721, -0.69243448])
-    >>>
+
     >>> randn(2, 2)
     array([[ 0.27499606, -2.78996343],
            [-0.43519836, -1.98494624]])
-    >>>
+
     >>> a = randn(2,2)
     >>> size(a)
     (2,2)
-    >>>
+
     >>> a = eye(2)
     >>> a[1,1] = 2
     >>> inv(a)
