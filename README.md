@@ -10,7 +10,7 @@ Plus, sometimes you just want to do stuff quickly (like simulate white noise and
 
 Finally, maybe you don't want your code to look really ugly and verbose with lots of "np.random", "scipy.stats", "linalg." etc. preceding every operation.
 
-Now compare this to MATLAB. Coding in MATLAB is terse and very useful you need to get stuff done quickly. You don't have to worry about importing different modules, importing functions that might risk namespace conflicts, twenty different ways to do one thing, etc. It's very low cognitive load for simple stuff. 
+Now compare this to MATLAB. Coding in MATLAB is terse and very useful when you need to get stuff done quickly. You don't have to worry about importing different modules, importing functions that might risk namespace conflicts, twenty different ways to do one thing, etc. It's very low cognitive load for simple stuff. 
 
 This repo hopes to bring that over to Python, allowing for quick MATLAB-like coding for those times when you don't need  Python's full object-oriented arsenal. The goal is a __low-overhead scientific computing mode__ that you can enter into for speedy, interactive programming. Then you can worry about proper coding practice once you start to write scripts after some initial experimenting and playing around.
 
