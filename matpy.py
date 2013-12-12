@@ -1,11 +1,25 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Radnom RV generators
+# Random RV generators
 from numpy.random import randn
 from numpy.random import rand
 
-# Useful functions
-from numpy import linspace
+# Import useful vectorized functions
+from numpy import linspace, exp, cos, sin, log, \
+        mean, var, std, cumsum, cumprod, dot
+
+# Import matrix operations
+from numpy.linalg import inv, det, solve, eigvals
+
+# Import probability distributions
+from scipy.stats import beta, binom, chi2, gamma, \
+        invgamma, lognorm, norm, uniform 
+
+# Import plotting
+from matplotlib.pyplot import plot, xlabel, ylabel, \
+        show, axis, subplot, title, figure, grid, \
+        hist, text
 
 
 # c() function like in R to concatenate and make an array
@@ -31,7 +45,17 @@ eye = lambda n: np.eye(n)
 # Size of matrix/array
 size = lambda array: array.shape
 
-# Invert matrix
-inv = lambda A: np.linalg.inv(A)
+# Induce an array to be a column matrix
+ascol = lambda x: np.transpose(np.matrix(x))
+    
+# Transpose
+t = lambda x: np.transpose(x)
+
+# Convert 0, 1 array to logical
+lgcl = lambda x: np.array(x, dtype=bool)
+
+
+
+
 
 

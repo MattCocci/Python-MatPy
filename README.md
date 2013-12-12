@@ -12,13 +12,13 @@ Finally, maybe you don't want your code to look really ugly and verbose with lot
 
 Now compare this to MATLAB. Coding in MATLAB is wonderfully terse when you need to get stuff done quickly. You don't have to worry about importing different modules, importing everything and thereby risking namespace conflicts, twenty different ways to do one thing, etc. It's very low cognitive load for simple stuff. 
 
-This repo hopes to bring that over to Python, allowing for quick MATLAB-like coding for those times when you don't need  Python's full object-oriented arsenal.
+This repo hopes to bring that over to Python, allowing for quick MATLAB-like coding for those times when you don't need  Python's full object-oriented arsenal. The goal is a __low-overhead scientific computing mode__ that you can enter into for speedy interactive programming. Then you can worry about proper coding practice once you start to write scripts after some initial experimenting and playing around.
 
 ## What This Module Does
 
-So this repo is a Python module which imports useful and commonly-used portions of Python's scientific libraries, then binds them to function names that are more MATLAB-like (like a simple "randn" for generating random normal variables). 
+So this repo is a Python module which imports useful and commonly-used portions of Python's scientific libraries, then binds matches to function names and syntax that are more MATLAB-like (so a simple "randn" for generating random normal variables). 
 
-Plus, it puts everything under one module.  That way, you don't have to worry about messy import statements at the beginning. And if you just want to import the whole shebang with "from matpy import \* ", go for it. This is written so you can do that and not worry about namespace conflicts.
+Plus, it puts everything under one module.  That way, you don't have to worry about messy import statements at the beginning. And if you just want to import the whole shebang with "from matpy import \* ", go for it. This is written with that in mind so you can do that and not worry about namespace conflicts.
 
 ## Examples
 
@@ -53,15 +53,17 @@ And finally, some inspiration from R, just because np.array(list) is too long:
 
 ## Notes for the Nitpicky
 
-Yes, importing everything is bad practice. But sometimes we want to do a quick, one-off simulation at the command line without bother with endless "np." If I'm going to replace MATLAB with Python, I better be able to do stuff quickly like that.
+Yes, importing everything is bad practice. But sometimes we want to do a quick, one-off simulation at the command line without the bother of endless np.'s floating around. And if I'm really going to replace MATLAB with Python, I better be able to do stuff just as quickly.
 
 So I'm allowing it. And I'm writing this module knowing that I'll want to do it, and so will other people. 
 
 If you really want, you can also do the proper object-oriented thing,
 
+    import numpy as np
+    import matplotlib.pyplot as plt
     import matpy as mp
 
-and get all this functionality under one heading
+This first brings in NumPy and Pyplot fully (both of which _are_ also nested under matpy, but again, we're shooting for brevity which mp.np.method doesn't satisfy). But this also puts some of the key functionality of interest under the mp heading, like random variable generation and Matlab-like syntax.
 
 
 
