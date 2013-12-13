@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from numpy.random import randn
 from numpy.random import rand
 
+# NaN stuff
+from numpy import nan, isnan
+
 # Import useful vectorized functions
 from numpy import linspace, exp, cos, sin, log, \
         mean, var, std, cumsum, cumprod, dot
