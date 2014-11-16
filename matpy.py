@@ -57,8 +57,3 @@ t = lambda x: np.transpose(x)
 # Convert 0, 1 array to logical
 lgcl = lambda x: np.array(x, dtype=bool)
 
-
-
-
-
-
